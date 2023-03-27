@@ -9,18 +9,13 @@ const ingredients = [
 
 const listToAppend = document.querySelector('#ingredients');
 
-const createItemsFromArray = function (array) {
-  const newItem = document.createElement('li');
-  newItem.classList.add('item');
-  const arrayOfItems = array.forEach(el => {
+
+  const arrayOfItems = ingredients.map(el => {
+    const newItem = document.createElement('li');
     newItem.textContent = el;
+    newItem.classList = 'item';
     return newItem}
   );
   
-  console.log(newItem);
-  console.log(arrayOfItems);
-
-  listToAppend.append('newItem')
-};
-
-createItemsFromArray(ingredients)
+console.log(arrayOfItems);
+listToAppend.append(...arrayOfItems)
